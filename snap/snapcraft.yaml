@@ -1,1 +1,25 @@
+name: usconstitution # check to see if it's available
+version: '1.0+git' # this is freakin' awesome
+summary: Read the US Constitution from your Terminal! # 79 char long summary
+description: |
+  Keep yourself educated on the U.S. Constitution right from the terminal! 
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
 
+apps:
+  usconstitution:
+    command: usconstitution
+    plugs:
+      - home
+     
+parts: 
+  my-part:
+    source: https://github.com/kz6fittycent/USConstitution
+    source-type: git
+    plugin: python3
+    
+    build-packages:
+      - python3
+      
+    stage-packages:
+      - python3
