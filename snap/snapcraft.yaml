@@ -1,5 +1,5 @@
 name: usconstitution # check to see if it's available
-version: '1.0+git' # this is freakin' awesome
+version: '1.1+git' # this is freakin' awesome
 summary: Read the US Constitution from your Terminal! # 79 char long summary
 description: |
   Keep yourself educated on the U.S. Constitution right from the terminal! 
