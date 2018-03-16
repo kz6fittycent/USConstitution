@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="usconstitution",
-    version="1.0",
+    version="1.1",
     description="Read the US Constitution right from your terminal",
     long_description=open("README.md").read(),
     license="MIT",
