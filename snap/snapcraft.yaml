@@ -6,15 +6,19 @@ description: |
 
 license: MIT
 
-base: core18
+# Attempt at core20 build
+
+base: core20
 grade: stable 
 confinement: strict
 
 apps:
   usconstitution:
-    command: usconstitution
+    command: usr/bin/usconstitution
     environment:
       LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
      
 parts: 
   usconstitution:
