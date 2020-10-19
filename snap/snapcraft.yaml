@@ -1,26 +1,31 @@
-name: usconstitution # check to see if it's available
-version: git
-summary: Read the US Constitution from your Terminal! # 79 char long summary
+name: usconstitution
+adopt-info: usconstitution
+summary: Read the US Constitution from your Terminal!
 description: |
   Keep yourself educated on the U.S. Constitution right from the terminal! 
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs
+
+license: MIT
+
+base: core18
+grade: stable 
+confinement: strict
 
 apps:
   usconstitution:
     command: usconstitution
     environment:
       LC_ALL: C.UTF-8
-    plugs:
-      - home
      
 parts: 
-  my-part:
+  usconstitution:
     source: https://github.com/kz6fittycent/USConstitution
     source-type: git
     plugin: python
     python-version: python3
-    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
+      
     build-packages:
       - python3
       
