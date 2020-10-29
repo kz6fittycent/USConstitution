@@ -14,7 +14,7 @@ confinement: strict
 
 apps:
   usconstitution:
-    command: usr/bin/python3 $SNAP/usconstitution
+    command: usconstitution
     environment:
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
