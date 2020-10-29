@@ -8,4 +8,11 @@ The US Constitution in your terminal...you know, just in case...
 sudo snap install usconstitution
 ```
 ### Run it:
+
+With ascii
+
 `usconstitution`
+
+Without ascii
+
+`usconstitution -p`

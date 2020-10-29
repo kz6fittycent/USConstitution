@@ -1,14 +1,22 @@
 name: usconstitution
-adopt-info: usconstitution
+version: '2.0'
 summary: Read the US Constitution from your Terminal!
 description: |
   Keep yourself educated on the U.S. Constitution right from the terminal! 
+  
+    **Install the snap**
+
+    sudo snap install usconstitution
+    
+    **Run it**
+    
+    With ascii - usconstitution
+    
+    Without ascii - usconstitution -p
 
 license: MIT
 
-# Attempt at core20 build
-
-base: core20
+base: core18
 grade: stable 
 confinement: strict
 
@@ -17,15 +25,14 @@ apps:
     command: usconstitution
     environment:
       LC_ALL: C.UTF-8
-      LANG: C.UTF-8
-      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
-     
+
 parts: 
   usconstitution:
     source: https://github.com/kz6fittycent/USConstitution
     source-type: git
     plugin: python
-    
+    python-version: python3
+
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
