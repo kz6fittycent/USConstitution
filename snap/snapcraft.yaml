@@ -6,9 +6,7 @@ description: |
 
 license: MIT
 
-# Attempt at core20 build
-
-base: core20
+base: core18
 grade: stable 
 confinement: strict
 
@@ -17,15 +15,14 @@ apps:
     command: usconstitution
     environment:
       LC_ALL: C.UTF-8
-      LANG: C.UTF-8
-      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages
-     
+
 parts: 
   usconstitution:
     source: https://github.com/kz6fittycent/USConstitution
     source-type: git
     plugin: python
-    
+    python-version: python3
+
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
