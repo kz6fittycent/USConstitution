@@ -24,6 +24,8 @@ parts:
   usconstitution:
     source: https://github.com/kz6fittycent/USConstitution
     source-type: git
+    plugin: python
+    
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
