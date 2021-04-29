@@ -16,7 +16,7 @@ description: |
 
 license: MIT
 
-base: core18
+base: core20
 grade: stable 
 confinement: strict
 
@@ -31,7 +31,6 @@ parts:
     source: https://github.com/kz6fittycent/USConstitution
     source-type: git
     plugin: python
-    python-version: python3
 
     override-pull: |
       snapcraftctl pull
